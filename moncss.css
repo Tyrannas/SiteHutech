@@ -1,0 +1,191 @@
+body{
+	background: white;
+	margin:0;
+
+}
+
+#menu{
+	/*====position===*/
+	position: relative;
+	float:left;
+
+	/*====aspect=====*/
+	background: orange;
+	width: 100%;
+	height: ;
+	/*======font=====*/
+	color:white;
+	font-family: 'Roboto';
+	font-weight:300;
+	/*====animation==*/
+	/*==========shadow=======*/
+    -moz-box-shadow: 0px 3px 5px 0px #9b9b9b;
+	-webkit-box-shadow: 0px 3px 5px 0px #9b9b9b;
+	-o-box-shadow: 0px 3px 5px 0px #9b9b9b;
+	box-shadow: 0px 3px 5px 0px #9b9b9b;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=180, Strength=5);
+}
+
+#menu .search{
+       width: 20%;
+    border: none;
+    padding: 0.5%;
+    margin: 1.2%;
+    border-radius: 20px;
+}
+
+#menu .search:focus,
+#menu .search:hover{
+	border-bottom-color: #419C8C;
+	outline:none;
+}
+
+
+
+#menu a{
+	/*====position===*/
+	position: relative;
+	float:left;
+	/*====aspect=====*/
+	background:orange;
+	width:15%;
+	padding:1.5% 0%;
+	margin: 0%;
+	border-bottom: solid 6px orange;
+	/*======font=====*/
+
+	text-align: center;
+	color:white;
+	text-decoration: none;
+	/*====animation==*/
+	-webkit-transition: border .2s ease-in-out;
+	   -moz-transition: border .2s ease-in-out;
+	    -ms-transition: border .2s ease-out;
+	     -o-transition: border .2s ease-out;
+	        transition: border .2s ease-out;
+}
+
+#menu a:hover{
+	/*background: #419C8C;*/
+	border-bottom: solid 6px #419C8C;
+	cursor:pointer;
+}
+
+.content{
+	/*====position===*/
+	position: relative;
+	float:left;
+	/*====aspect=====*/
+	margin: 1vw 15vw;
+	background: ;
+	/*======font=====*/
+	/*====animation==*/
+}
+
+.slotContainer{
+	position: relative;
+	float:left;
+	background: none;
+}
+.slot{
+	/*====position===*/
+	position: relative;
+	float:left;
+	/*====aspect=====*/
+	display:block;
+	background: none;
+	width: 20vw;
+	height: 20vw;
+	margin:1em;
+	/*======font=====*/
+	color: black;
+	text-align: center;
+	/*====animation==*/
+	    -moz-box-shadow: 0px 2px 5px 2px #CECBCB;
+    -webkit-box-shadow: 0px 2px 5px 2px #CECBCB;
+    -o-box-shadow: 0px 2px 5px 2px #CECBCB;
+    box-shadow: 0px 2px 5px 2px #CECBCB;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#CECBCB, Direction=180, Strength=5);
+}
+
+.slot:hover{
+	background: #419C8C;
+	cursor:pointer;
+	color:white;
+}
+.slot p{
+	position: relative;
+    top: 43%;
+    font-family: Roboto;
+}
+.tagContainer{
+	text-align: center;
+}
+
+.tagContainer .tag{
+	background: #419C8C;
+    border-radius: 20px;
+    padding: 0.3em 0.8em;
+    margin: 0.2em;
+    font-family: Roboto;
+    color: white;
+    font-size: 0.7em;
+}
+
+.tagContainer .tag:hover{
+	cursor: pointer;
+	background: #97ADA9;
+}
+.add{
+	/*positionnement*/
+
+
+
+}
+
+.add{
+	/*====position===*/
+	position: relative;
+	float:left;
+	/*====aspect=====*/
+	display:block;
+	background: red;
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	/*======font=====*/
+	/*====animation==*/
+}
+
+.article{
+	/*====position===*/
+	position: relative;
+	/*====aspect=====*/
+	background: #EAEAEA;
+	width: 60vw;
+	height: ;
+	border-radius: 1em;
+	padding:4vw;
+	/*======font=====*/
+	font-family: 'Roboto';
+	font-size: '1em';
+	/*====animation==*/
+	-moz-box-shadow: inset 0px 1px 3px 0px #656565;
+    -webkit-box-shadow: inset 0px 1px 3px 0px #656565;
+    -o-box-shadow: inset 0px 1px 3px 0px #656565;
+    box-shadow: inset 0px 1px 3px 0px #656565;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=3);
+    -moz-border-radius: 10px;
+    
+    
+}
+/*========================MEDIA QUERIES=====================*/
+@media screen and (max-width: 960px) {
+  .slot {
+    width :33vw;
+    height: 33vw;
+  }
+  .content{
+  	margin: 1vw 10vw;
+  }
+}

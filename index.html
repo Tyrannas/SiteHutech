@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head >
+		<title>Mens Insana</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Base mémorielle Hutech">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Librairies -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+		<!-- Application -->
+		<script src="js/app.js"></script>
+		<!-- Modules -->
+		<script src="js/accueil.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/memoires.js"></script>
+		<script type="text/javascript" src="js/articles.js"></script>
+		<!-- css -->
+		<!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"-->
+		<link rel="stylesheet" type="text/css" href="moncss.css">
+	</head>
+	<body ng-app="hutechApp">
+		<nav id="menu" ng-controller="menuCtrl">
+			<a ng-repeat="item in menuItems track by $index" href="#/{{item}}">{{item}}</a>
+			<input type="text" class="search" placeholder="Recherche">
+		</nav>
+		<div ng-view>
+		</div>
+	</body>
+	<script type="text/javascript"></script>
+</html>
