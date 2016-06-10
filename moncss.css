@@ -176,8 +176,6 @@ body{
     box-shadow: inset 0px 1px 3px 0px #656565;
     filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=3);
     -moz-border-radius: 10px;
-    
-    
 }
 /*========================MEDIA QUERIES=====================*/
 @media screen and (max-width: 960px) {

@@ -32,19 +32,36 @@ hutechApp.directive('slots', [function () {
 		restrict: 'A',
 		replace: true,
 		transclude: true,
-		template: '<div ng-repeat="article in articles track by $index" class="slotContainer">' + 
-					  '<div class="slot" id={{article.id}} ng-click="openArticle(this.id)">' + 
-						'<p class="titre">{{article.title}}</p>'+
-					  '</div>'+
-					  '<div class="tagContainer">' +
-						 '<span ng-repeat="tag in article.tags track by $index" class="tag">{{tag}}</span>'+
-					  '</div>'+
-					'</div>',
+		templateUrl: 'templates/articles.html',
 		link: function (scope, iElement, iAttrs) {
 			
 		}
 	};
-}])
+}]);
+
+hutechApp.factory('Request', function () {
+
+var url = 'php/get.php';
+var req = new String();
+
+  return {
+    getArticle: function(category) {
+      	if(category !== 'all')
+      		req = "SELECT JSON FROM articles WHERE category = '"+category+"'";
+      	else 
+      		req = "SELECT JSON FROM articles";
+		return $http.post(url,{
+			'data' : {'req' : req}	
+		});
+    },
+    getFile: function(){
+
+    },
+    getComment: function(){
+
+    }
+  };
+});
 
 
 

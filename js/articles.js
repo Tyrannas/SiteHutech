@@ -1,19 +1,31 @@
 'use strict';
 
-var articles = angular.module('articles',['ngRoute']);
+var articles = angular.module('articles',['ngRoute','hutechApp']);
 
-articles.controller('articlesCtrl', ['$scope', function ($scope) {
+articles.controller('articlesCtrl', ['$scope','$filter', function ($scope,$filter) {
 
-	var articles = $scope.articles = !localStorage.getItem("articles")? new Array() : JSON.parse(localStorage.getItem("articles"));
-	console.log(articles);
+	var orderBy = $filter('orderBy');
+	//var triTag = $filter('triTag');
+	$scope.onLoad = function(){
+		var articles = $scope. 
+	}
+
+	var handleSuccess = function(data, status) {
+       $scope.variableName = data;
+       console.log($scope.variableName);
+    };
+
+	var articles = $scope.articles; // = !localStorage.getItem("articles")? new Array() : orderBy(JSON.parse(localStorage.getItem("articles")),'title');
+
 
 	$scope.addArticle = function(){
-		var id = Math.round(Math.random()*1000000000000);
+		var id = Math.round(Math.random()*1000000000000).toString().replace(/0/g,"y").replace(9,"a");
 		var article = {
 			'id'    : id,
-			'title' : 'Transduction des systèmes de pensée',
-			'autor' : 'Gilbert Simondon & Michel Foucault',
-			'tags'	: ['Philosophie','Transduction','Techniques'],
+			'title' : "Oui oui au pays des trululu",
+			'autor' : 'Jamon Sanchez',
+			'tags'	: ['Enfance','ActeurReseau','Histoire'],
+			'category' : 'memoire',
 			'type'	: 'pdf'
 		};
 		articles.push(article);
@@ -24,4 +36,23 @@ articles.controller('articlesCtrl', ['$scope', function ($scope) {
 	$scope.openArticle = function(id){
 		window.open("res/pdf/PenserPolitiqueSimondon.pdf");
 	}
-}]);
+
+	$scope.sortArticle = function(critere){
+		articles = orderBy(articles,critere);
+	}
+
+	$scope.articleByTag = function(tag){
+		console.log(tag);
+		var temp = new Array();
+		articles.forEach( function(article) {
+			if(article.tags.indexOf(tag) !== -1)
+				temp.push(article);
+		});
+		$scope.articles = temp;
+	}
+}]);/*
+	.filter('triTag', ['', function(){
+        return function(input, symbol){
+            // le code de notre filtre
+        };
+    }]);*/
